@@ -8,8 +8,21 @@ export default function Home() {
   return (
     <>
     <Background>
-      
-    
+      <CardsWrapper>
+      <Card></Card>
+      <Card></Card>
+      <Card></Card>
+      <Card></Card>
+      <Card></Card>
+      <Card></Card>
+      <Card></Card>
+      <Card></Card>
+      <Card></Card>
+      <Card></Card>
+      <Card></Card>
+      <Card></Card>
+      </CardsWrapper>
+  
     </Background>
    
     </>
@@ -19,4 +32,15 @@ export default function Home() {
 
 const Background = styled.div`
 font-family: 'Roboto', sans-serif;
+
+`
+
+const CardsWrapper = styled.div`
+width: 1250px;
+height: 300px;
+display: flex;
+flex-wrap: wrap;
+margin: 0 auto;
+
+ 
 `
