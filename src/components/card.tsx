@@ -15,13 +15,14 @@ export default function Card(){
 const CardBackground = styled.div`
     width: 250px;
     height: 260px;
-    background-color: #EEE;
-    border: 1px solid #656565 ;
+    background-color: #EFEFEF;
+    border: 1px solid #DFDFDF ;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right:40px;
+    margin-left:20px;
+    margin-right: 20px;
     margin-top: 40px;
 `
 
@@ -36,7 +37,6 @@ const AppText = styled.div`
     width: 190px;
     margin-top: 30px;
     align-items: center;
-        p{
-            font-size: 20px;
-        }
+    color: #707070;
+    
 `

@@ -2,12 +2,14 @@
 
 
 import Card from '@/components/card';
+import SearchBar from '@/components/search';
 import styled from 'styled-components';
 
 export default function Home() {
   return (
     <>
     <Background>
+      <SearchBar></SearchBar>
       <CardsWrapper>
       <Card></Card>
       <Card></Card>
@@ -32,15 +34,20 @@ export default function Home() {
 
 const Background = styled.div`
 font-family: 'Roboto', sans-serif;
+width: 100vw;
+display: flex;
+flex-direction: column;
+align-items: center;
 
 `
 
 const CardsWrapper = styled.div`
-width: 1250px;
+width: 1190px;
 height: 300px;
 display: flex;
 flex-wrap: wrap;
-margin: 0 auto;
+
+
 
  
 `
