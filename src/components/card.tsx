@@ -1,16 +1,31 @@
 import styled from "styled-components";
 
-export default function Card(){
+type CardProps = {
+    tool: {
+      id: number;
+      icon?: string;
+      name?: string;
+    };
+  };
+
+const Card= ({tool}: CardProps) => {
     return(
         <>
         <CardBackground>
-        <AppLogo></AppLogo>
-        <AppText>RD STATION MANAGER</AppText>
+        <AppLogo>
+            
+            <img src={tool.icon} alt={tool.name} key={tool.id}></img>
+            
+          
+        </AppLogo>
+        <AppText>{tool.name}</AppText>
         </CardBackground>
        
         </>
     )
 }
+
+export default Card
 
 const CardBackground = styled.div`
     width: 250px;
@@ -29,14 +44,25 @@ const CardBackground = styled.div`
 const AppLogo = styled.div`
     width: 150px;
     height: 150px;
-    border-radius: 50%;
-    background-color: pink;
+    border-radius: 75px;
+    background-color: #D8D8D8;
     margin-top: 30px;
+    img{
+       width: 100%;
+       height: 100%;
+        object-fit: cover;
+        
+    }
+        
+   
 `
+
+
 const AppText = styled.div`
-    width: 190px;
+    
     margin-top: 30px;
     align-items: center;
+    justify-content: center;
     color: #707070;
     
 `
