@@ -16,20 +16,39 @@ export type Tool = {
 
 export default function SearchBar({tools, onSearch}: SearchBarProps){
     const [searchTerm, setSearchTerm] = useState<string>("");
+    const [listSearch, setListSearch] = useState<Tool[]>([]);
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setSearchTerm(event.target.value);
+        const value = event.target.value
+        setSearchTerm(value);
+
+        if(value.length >= 3){
+            const list = tools.filter(tool => tool.name?.toLowerCase().includes(value.toLowerCase()))
+            setListSearch(list)
+            onSearch(value)
+        }else{
+            setListSearch([])
+        }
     }
 
     const handleSearch = (event: MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
-        if (onSearch){
+        if (onSearch && searchTerm.length >= 3){
             onSearch(searchTerm);
         }
     }
+
+    const handleKey = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if(event.key === 'Enter'){
+            onSearch(searchTerm);
+        }
+
+    }
+
     return(
-        <>
-        <StyledSearch>
+        
+        <div style={{position: 'relative'}}>
+        <StyledSearch >
             <button onClick={handleSearch}>
             <StyledFaSearch/>
             </button>
@@ -37,9 +56,20 @@ export default function SearchBar({tools, onSearch}: SearchBarProps){
              <input 
              placeholder="BUSCA FERRAMENTA"
              value={searchTerm}
-             onChange={handleInputChange}></input>
+             onChange={handleInputChange}
+             onKeyDown={handleKey}></input>
         </StyledSearch>
-        </>
+        <ul style={{listStyleType: 'none', backgroundColor: 'white', zIndex:'1000', position: 'absolute', left: '0', top: '100%', width: '100%'}}>
+        {listSearch.map((tool) => (
+          <li key={tool.id} style={{display: 'flex', alignItems:'flex-start', marginRight: '50px', marginTop:'20px'}}>
+            <img src={tool.icon} alt={tool.name} style={{width: '20px', height:'20px', marginRight: '5px' }}></img>
+            {tool.name}
+          </li>  
+        ))}
+        </ul>
+        </div>
+        
+        
     )
 }
 
@@ -51,6 +81,7 @@ const StyledSearch = styled.div`
     padding-left: 50px;
     border-radius: 5px;
     justify-content: center;
+  
         input{
             height: 50px;   
             background-color: #DDD;

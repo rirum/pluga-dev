@@ -59,10 +59,14 @@ const AppLogo = styled.div`
     border-radius: 75px;
     background-color: #D8D8D8;
     margin-top: 30px;
+    overflow:hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     img{
-       width: 100%;
-       height: 100%;
-        object-fit: cover;
+       width: 70%;
+       height: 70%;
+        object-fit: contain;
         
     }
         
