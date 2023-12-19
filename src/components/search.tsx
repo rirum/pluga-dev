@@ -1,15 +1,43 @@
 import styled from "styled-components";
 import { FaSearch } from "react-icons/fa";
+import { ChangeEvent, useState, MouseEvent } from "react";
 
-export default function SearchBar(){
+type Tool = {
+    id: number;
+    icon?: string;
+    name?: string;
+  };
+  
+  type SearchBarProps = {
+    tools: Tool[];
+    onSearch: (searchTerm: string) => void;
+  };
+  
+
+export default function SearchBar({tools, onSearch}: SearchBarProps){
+    const [searchTerm, setSearchTerm] = useState<string>("");
+
+    const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setSearchTerm(event.target.value);
+    }
+
+    const handleSearch = (event: MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        if (onSearch){
+            onSearch(searchTerm);
+        }
+    }
     return(
         <>
         <StyledSearch>
-            <button>
+            <button onClick={handleSearch}>
             <StyledFaSearch/>
             </button>
        
-             <input placeholder="BUSCA FERRAMENTA"></input>
+             <input 
+             placeholder="BUSCA FERRAMENTA"
+             value={searchTerm}
+             onChange={handleInputChange}></input>
         </StyledSearch>
         </>
     )

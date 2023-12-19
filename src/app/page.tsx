@@ -7,10 +7,17 @@ import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { fetchToolsData } from '@/services/api';
 
+type HomeProps = {};
+
+type Tool = {
+  id: number;
+  icon: string;
+  name: string;
+};
 
 
-export default function Home() {
-  const [toolsData, setToolsData] = useState<Array<{ id: number }>>([]);
+export default function Home({}: HomeProps) {
+  const [toolsData, setToolsData] = useState<Tool[]>([]);
   const [filteredTools, setFilteredTools] = useState<Array<{ id: number }>>([]);
   const [loading, setLoading]= useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -21,7 +28,7 @@ export default function Home() {
     const fetchData = async () => {
       try{
         const data = await fetchToolsData();
-        console.log(data);
+        
         setToolsData(data);
         setFilteredTools(data);
         setLoading(false);
@@ -33,6 +40,18 @@ export default function Home() {
     }
     fetchData();
   }, []);
+
+
+  const handleSearch = (searchTerm: string) => {
+   
+    const filtered = toolsData.filter((tool) =>
+      
+    tool.name.toLowerCase().includes(searchTerm.toLowerCase())
+      
+    );
+    console.log(filtered);
+    setFilteredTools(filtered);
+  };
 
   const totalItems = filteredTools.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -48,7 +67,7 @@ export default function Home() {
   return (
     <>
      <Background>
-        <SearchBar></SearchBar>
+        <SearchBar tools={toolsData} onSearch={handleSearch}></SearchBar>
         <CardsWrapper>
           {loading ? (
             <p>Loading...</p>
