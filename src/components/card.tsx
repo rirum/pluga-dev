@@ -1,5 +1,6 @@
 import styled from "styled-components";
-
+import { useState } from "react";
+import Modal from "./modal";
 type CardProps = {
     tool: {
       id: number;
@@ -9,9 +10,19 @@ type CardProps = {
   };
 
 const Card= ({tool}: CardProps) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleOpenModal = () => {
+        setIsModalOpen(true);
+    }
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    }
+
     return(
         <>
-        <CardBackground>
+        <CardBackground onClick={handleOpenModal}>
         <AppLogo>
             
             <img src={tool.icon} alt={tool.name} key={tool.id}></img>
@@ -21,6 +32,7 @@ const Card= ({tool}: CardProps) => {
         <AppText>{tool.name}</AppText>
         </CardBackground>
        
+        {isModalOpen && <Modal tool={tool} onClose={handleCloseModal} />}
         </>
     )
 }

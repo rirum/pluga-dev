@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { FaSearch } from "react-icons/fa";
 import { ChangeEvent, useState, MouseEvent } from "react";
 
-type Tool = {
+export type Tool = {
     id: number;
     icon?: string;
     name?: string;
