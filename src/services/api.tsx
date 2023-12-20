@@ -1,9 +1,14 @@
 import axios from 'axios';
 
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
 export const fetchToolsData = async () => {
   try {
-    const response = await axios.get('https://pluga.co/ferramentas_search.json');
-    
+    if (!apiUrl) {
+      throw new Error('API_URL não está definido.');
+    }
+
+    const response = await axios.get(apiUrl);
     return response.data;
   } catch (error) {
     console.error('Error fetching data:', error);

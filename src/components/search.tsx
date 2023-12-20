@@ -77,17 +77,29 @@ export default function SearchBar({ tools, onSearch }: SearchBarProps) {
             key={tool.id}
             style={{
               display: 'flex',
-              alignItems: 'flex-start',
+              alignItems: 'center',
+              justifyContent: 'flex-start',
               marginRight: '50px',
-              marginTop: '20px',
+              marginTop: '10px',
+              overflow: 'hidden',
+              borderBottom: '1px solid #f5f5f5',
+              paddingBottom: '5px',
+              
             }}
           >
             <img
               src={tool.icon}
               alt={tool.name}
-              style={{ width: '20px', height: '20px', marginRight: '5px' }}
+              style={{ width: '20px', height: '20px', borderRadius:'50%', objectFit: 'contain', marginRight: '5px', backgroundColor: tool.color }}
             ></img>
-            {tool.name}
+            <a
+                href={tool.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'inherit', textDecoration: 'none' }}
+                >
+                {tool.name}
+            </a>
           </li>
         ))}
       </ul>
@@ -106,6 +118,7 @@ const StyledSearch = styled.div`
 
   input {
     height: 50px;
+    width: 1000px;
     background-color: #ddd;
     box-shadow: 0 0 0 0;
     border: 0 none;

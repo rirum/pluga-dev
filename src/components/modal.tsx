@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Tool } from './search';
 import { useRef,useEffect, useState} from 'react';
+import Link from 'next/link';
 
 type ModalProps = {
   tool: Tool;
@@ -61,16 +62,33 @@ const Modal: React.FC<ModalProps> = ({ tool, onClose }) => {
             <p>ÚLTIMAS FERRAMENTAS VISUALIZADAS</p>
               </LastSeenText>
               <WrapperTextAndMiniCards>
+                
               {viewedTools.map((seenTool) => (
-  <LastSeenAppsCards key={seenTool.id}>
-    <LastSeenAppLogo color={seenTool.color}>
-      <img src={seenTool.icon} alt={seenTool.name} />
-    </LastSeenAppLogo>
-    <LastSeenAppName>
-      <p>{seenTool.name}</p>
-    </LastSeenAppName>
-  </LastSeenAppsCards>
-))}
+                <LastSeenAppsCards key={seenTool.id}>
+                  {seenTool.link ? (
+              <div>
+                <LastSeenAppLogo color={seenTool.color}>
+                  <img src={seenTool.icon} alt={seenTool.name} />
+                </LastSeenAppLogo>
+                <LastSeenAppName>
+                  <StyledLink href={seenTool.link}>
+                    <p>{seenTool.name}</p>
+                  </StyledLink>
+                </LastSeenAppName>
+              </div>
+            ) : (
+              <div>
+                <LastSeenAppLogo color={seenTool.color} key={seenTool.id}>
+                  <img src={seenTool.icon} alt={seenTool.name} />
+                </LastSeenAppLogo>
+                <LastSeenAppName>
+                  <p>{seenTool.name}</p>
+                </LastSeenAppName>
+                <p>Ferramenta sem link</p>
+              </div>
+            )}
+    </LastSeenAppsCards>
+  ))}
           </WrapperTextAndMiniCards>
         </LastSeenApps>
           
@@ -195,11 +213,22 @@ const LastSeenAppLogo = styled.div`
 `
 
 const LastSeenAppName = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
   p{
     font-size: 15px;
     color: #707070;
     margin-top: 30px;
   }
+
+`
+
+const StyledLink = styled.a`
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  
 `
 
 export default Modal;

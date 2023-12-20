@@ -49,7 +49,7 @@ export default function Home({}: HomeProps) {
     tool.name.toLowerCase().includes(searchTerm.toLowerCase())
       
     );
-    console.log(filtered);
+    
     setFilteredTools(filtered);
   };
 
