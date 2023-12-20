@@ -21,7 +21,7 @@
 
 ## 💻 Sobre o projeto
 
-✏️ Pluga Dev Challenge - aplicação de front-end para o desafio técnico da vaga para Pluga. Nessa aplicação é possível buscar ferramentas através da busca e visualizar a página completa dessas ferramentas para observar o que melhor atende suas necessidades.
+✏️ Pluga Dev Challenge - aplicação de front-end para o desafio técnico da vaga para Pluga. Nessa aplicação é possível buscar ferramentas e visualizar a página completa dessas ferramentas para observar o que melhor atende suas necessidades.
 
 ---
 ## ✔️ Deploy
@@ -72,9 +72,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 Este projeto esta sobe a licença [MIT](./LICENSE).
 
-## 🦸 Autor
+## 🦸 Autora
 <br/>
 Feito por Camille Miyashita 👋🏽 [Entre em contato!]
+
 [![Linkedin Badge](https://img.shields.io/badge/-Camille-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/camille-miyashita/)](https://www.linkedin.com/in/camille-miyashita/) 
 [![Gmail Badge](https://img.shields.io/badge/-c.miyashita@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:c.miyashita@gmail.com)](mailto:c.miyashita@gmail.com)
 

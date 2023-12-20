@@ -1,64 +1,32 @@
-import styled from 'styled-components';
-import { FaSearch } from 'react-icons/fa';
-import { ChangeEvent, useState, MouseEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
+import { StyledSearch, StyledFaSearch } from './styles';
+import { Tool, SearchBarProps } from '@/types/tools';
 
-export type Tool = {
-  id: number;
-  icon?: string;
-  name?: string;
-  color?: string;
-  link?: string;
-};
 
-type SearchBarProps = {
-  tools: Tool[];
-  onSearch: (searchTerm: string) => void;
-};
-
-export default function SearchBar({ tools, onSearch }: SearchBarProps) {
+export default function SearchBar({ onSearch }: SearchBarProps) {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [listSearch, setListSearch] = useState<Tool[]>([]);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setSearchTerm(value);
-
-    if (value.length >= 3) {
-      const list = tools.filter((tool) =>
-        tool.name?.toLowerCase().includes(value.toLowerCase())
-      );
-      setListSearch(list);
-      onSearch(value);
-    } else {
-      setListSearch([]);
-    }
+    onSearch(value);
   };
 
-  const handleSearch = (event: MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    if (onSearch && searchTerm.length >= 3) {
-      onSearch(searchTerm);
-    }
-  };
-
-  const handleKey = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
-      onSearch(searchTerm);
-    }
-  };
+  
 
   return (
     <div style={{ position: 'relative' }}>
       <StyledSearch>
-        <button onClick={handleSearch}>
+        
           <StyledFaSearch />
-        </button>
+        
 
         <input
-          placeholder="BUSCA FERRAMENTA"
+          placeholder="BUSCAR FERRAMENTA"
           value={searchTerm}
           onChange={handleInputChange}
-          onKeyDown={handleKey}
+         
         ></input>
       </StyledSearch>
       <ul
@@ -107,38 +75,3 @@ export default function SearchBar({ tools, onSearch }: SearchBarProps) {
   );
 }
 
-const StyledSearch = styled.div`
-  width: 1260px;
-  margin: 0 auto;
-  margin-top: 10px;
-  background-color: #ddd;
-  padding-left: 50px;
-  border-radius: 5px;
-  justify-content: center;
-
-  input {
-    height: 50px;
-    width: 1000px;
-    background-color: #ddd;
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: 0;
-
-    ::placeholder {
-      font-size: 40px;
-      color: #707070;
-    }
-  }
-  button {
-    background-color: transparent;
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: 0;
-    cursor: pointer;
-  }
-`;
-
-const StyledFaSearch = styled(FaSearch)`
-  margin-right: 10px;
-  font-size: 15px;
-`;
