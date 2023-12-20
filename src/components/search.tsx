@@ -7,6 +7,7 @@ export type Tool = {
   icon?: string;
   name?: string;
   color?: string;
+  link?: string;
 };
 
 type SearchBarProps = {
