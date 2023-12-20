@@ -1,7 +1,7 @@
 
 
 <h1 align="center">
-   <a href="https://i.imgur.com/x4VPDlU.png" width="200px" alt="Pluga-Logo" > </a>
+  <a href="#"> <img src="https://i.imgur.com/x4VPDlU.png" width="200px" alt="Pluga-Logo" > </a>
 </h1>
 
 <h4 align="center"> 
@@ -13,8 +13,9 @@
   <a href="#-deploy">Deploy</a> •
   <a href="#-rodando-a-aplicacao-web">Rodando a aplicação web</a> •
   <a href="#-tecnologias">Tecnologias</a> • 
- <a href="#-autor">Autor</a> • 
- <a href="#user-content--licença">Licença</a>
+  <a href="#user-content--licença">Licença</a> • 
+  <a href="#-autor">Autor</a> 
+ 
 </p>
 
 
@@ -62,24 +63,20 @@ As seguintes ferramentas foram usadas na construção do projeto:
 -   **[Axios](https://github.com/axios/axios)**
 -   **[Styled Components](https://styled-components.com/docs)**
 -   **[Jest](https://jestjs.io/pt-BR/)**
--   
----
-
-
-## 🦸 Autor
-
-<br/>
-
-[![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/camille-miyashita/)](https://www.linkedin.com/in/camille-miyashita/) 
-[![Gmail Badge](https://img.shields.io/badge/-c.miyashita@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:c.miyashita@gmail.com)](mailto:c.miyashita@gmail.com)
 
 ---
+
+
 
 ## 📝 Licença
 
 Este projeto esta sobe a licença [MIT](./LICENSE).
 
-Feito por Camille Miyashita 👋🏽 [Entre em contato!]([https://www.linkedin.com/in/camille-miyashita/](https://www.linkedin.com/in/camille-miyashita/))
+## 🦸 Autor
+<br/>
+Feito por Camille Miyashita 👋🏽 [Entre em contato!]
+[![Linkedin Badge](https://img.shields.io/badge/-Camille-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/camille-miyashita/)](https://www.linkedin.com/in/camille-miyashita/) 
+[![Gmail Badge](https://img.shields.io/badge/-c.miyashita@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:c.miyashita@gmail.com)](mailto:c.miyashita@gmail.com)
 
 ---
 
