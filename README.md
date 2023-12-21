@@ -25,7 +25,9 @@
 
 ---
 ## ✔️ Deploy
-Link em breve
+
+https://pluga-dev.vercel.app/
+
 
 ## 🧭 Rodando a Aplicação web
 
