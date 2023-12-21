@@ -58,13 +58,13 @@ $ npm run dev
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-#### **Website**  ([React](https://reactjs.org/)  +  [TypeScript](https://www.typescriptlang.org/))
+#### **Website**  ([React + Next.js](https://reactjs.org/)  +  [TypeScript](https://www.typescriptlang.org/))
 
 
 -   **[React Icons](https://react-icons.github.io/react-icons/)**
 -   **[Axios](https://github.com/axios/axios)**
 -   **[Styled Components](https://styled-components.com/docs)**
--   **[Jest](https://jestjs.io/pt-BR/)**
+-   
 
 ---
 
