@@ -25,7 +25,7 @@
 
 ---
 ## ✔️ Deploy
-
+Caso queira ver a aplicação no ar, segue o link do deploy via Vercel:
 https://pluga-dev.vercel.app/
 
 
@@ -46,7 +46,7 @@ $ cd src
 $ npm install
 
 # Execute a aplicação em modo de desenvolvimento
-$ npm run start
+$ npm run dev
 
 # O servidor inciará na porta:3000 - acesse http://localhost:3000 
 

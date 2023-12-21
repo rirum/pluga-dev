@@ -13,6 +13,10 @@ export const CardBackground = styled.div`
   margin-right: 20px;
   margin-top: 40px;
   cursor: pointer;
+  transition: background-color 0.3;
+  &:hover{
+    background-color: #e0e0e0;
+  }
 `;
 
 export const AppLogo = styled.div`

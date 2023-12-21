@@ -59,8 +59,15 @@ export const AppInfo = styled.div`
     height: 40px;
     border-radius: 40px;
     margin-top: 15px;
+    background-color: #27aae1;
+    color: white;
+    font-weight: bold;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s; 
+    &:hover{
+      background-color: #2980b9;
+    }
   }
 `;
 
@@ -95,6 +102,10 @@ export const LastSeenAppsCards = styled.div`
   margin-top: 20px;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s;
+  &:hover{
+    background-color: #e0e0e0;
+  }
 `
 
 export const LastSeenAppLogo = styled.div`
