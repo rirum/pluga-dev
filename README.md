@@ -64,7 +64,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
 -   **[React Icons](https://react-icons.github.io/react-icons/)**
 -   **[Axios](https://github.com/axios/axios)**
 -   **[Styled Components](https://styled-components.com/docs)**
--   
 
 ---
 
