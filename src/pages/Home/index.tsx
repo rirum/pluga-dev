@@ -5,7 +5,7 @@ import SearchBar from '@/components/Search';
 import { useState, useEffect } from 'react';
 import { fetchToolsData } from '@/services/api';
 import { Tool, HomeProps } from '@/types/tools';
-import { Background, CardsWrapper, Pagination } from "./home.styles"
+import { Background, CardsWrapper, Pagination } from "../../styles/home.styles"
 
 export default function Home({}: HomeProps){
   const [toolsData, setToolsData] = useState<Tool[]>([]);
